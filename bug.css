@@ -1,0 +1,25 @@
+The CSS specificity rules can lead to unexpected results if not fully understood. For example, consider the following scenario:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green;
+}
+```
+
+A `<p>` element inside a `<div>` element will be green due to the higher specificity of `div p`. However, adding an inline style with `!important` can override this:
+
+```html
+<div>
+  <p style="color: yellow !important;">This text is yellow.</p>
+</div>
+```
+
+The `!important` flag increases the specificity to an extent that overrides other selectors, sometimes unintentionally, making debugging more difficult.  Overuse of `!important` makes CSS harder to maintain and understand.
