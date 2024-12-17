@@ -1,0 +1,14 @@
+The solution focuses on avoiding the use of `!important` by improving CSS selector specificity:
+
+```css
+/* bugSolution.css */
+div p {
+  color: green;
+}
+
+div p.highlight {
+  color: yellow; /* More specific selector for overriding */
+}
+```
+
+This approach uses more specific selectors to achieve the same styling without using the `!important` flag. This improves CSS maintainability and makes the code easier to understand and debug.  In this solution, a class `.highlight` has been added to the paragraph in the HTML to demonstrate the use of a more specific selector.
